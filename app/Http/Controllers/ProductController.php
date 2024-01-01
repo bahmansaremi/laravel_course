@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use function Laravel\Prompts\alert;
@@ -43,5 +44,24 @@ class ProductController extends Controller
 //            return $product;
             return view('product.detail', compact('product'));
         else return 'Does not exist!';
+    }
+
+    public function productEdit($id)
+    {
+        $product = Product::find($id);
+        return view('product.edit', compact('product'));
+    }
+
+    public function productUpdate(UpdateProductRequest $request, $id)
+    {
+        $product = Product::find($id);
+        $product->update([
+            'title' => $request->title,
+            'price' => $request->price,
+            'total_count' => $request->total_count,
+            'category' => $request->category,
+            'description' => $request->description,
+        ]);
+        return redirect('products');
     }
 }
