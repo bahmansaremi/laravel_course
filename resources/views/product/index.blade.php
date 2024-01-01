@@ -39,9 +39,13 @@
                                 <i class="now-ui-icons ui-2_settings-90"></i>
                             </button>
                         </a>
-                        <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
-                        </button>
+                            <form class="d-inline-block" method="POST" action="{{route('product.delete', $product->id)}}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" rel="tooltip" class="btn btn-danger btn-sm btn-icon" onclick="return confirm('Are you sure you want to delete it?')">
+                                    <i class="now-ui-icons ui-1_simple-remove"></i>
+                                </button>
+                            </form>
                     </td>
                 </tr>
             @endforeach

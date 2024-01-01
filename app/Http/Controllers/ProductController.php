@@ -62,6 +62,12 @@ class ProductController extends Controller
             'category' => $request->category,
             'description' => $request->description,
         ]);
-        return redirect('products');
+        return redirect()->route('product.index');
+    }
+
+    public function productDelete($id)
+    {
+        Product::find($id)->delete();
+        return redirect()->route('product.index');
     }
 }

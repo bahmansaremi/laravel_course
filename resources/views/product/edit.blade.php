@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="alert('Update is done!')">Submit</button>
     </form>
 
 @endsection
