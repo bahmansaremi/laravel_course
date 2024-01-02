@@ -15,7 +15,7 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', function () {return view('welcome');});
-Route::get('/icon', function () {return view('layout.icon');});
+Route::get('/icon', function () {return view('layout.icon');})->name('layout.icon');
 Route::get('/master', function () {return view('layout.master');});
 
 Route::get('product/create', [ProductController::class,'createProduct'])->name('product.create');
