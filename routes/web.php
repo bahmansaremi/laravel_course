@@ -25,4 +25,5 @@ Route::get('product/{id}',[ProductController::class,'productDetail'])->name('pro
 Route::get('product/{id}/edit',[ProductController::class,'productEdit'])->name('product.edit');
 Route::put('product/update/{id}',[ProductController::class,'productUpdate'])->name('product.update');
 Route::delete('product/{id}',[ProductController::class,'productDelete'])->name('product.delete');
+Route::get('product/{id}/activation',[ProductController::class,'productActivation'])->name('product.activation');
 

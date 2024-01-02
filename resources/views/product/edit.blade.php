@@ -1,5 +1,4 @@
 @extends('layout.master')
-
 @section('title')
     Edit existing products
 @endsection
@@ -54,7 +53,8 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" onclick="alert('Update is done!')">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
 @endsection
+

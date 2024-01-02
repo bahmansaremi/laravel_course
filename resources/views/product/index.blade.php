@@ -39,6 +39,11 @@
                                 <i class="now-ui-icons ui-2_settings-90"></i>
                             </button>
                         </a>
+                        <a href="{{route('product.activation', $product->id)}}">
+                            <button type="button" rel="tooltip" class="btn btn-warning btn-sm btn-icon">
+                                <i class="now-ui-icons ui-1_check"></i>
+                            </button>
+                        </a>
                             <form class="d-inline-block" method="POST" action="{{route('product.delete', $product->id)}}">
                                 @csrf
                                 @method('DELETE')
